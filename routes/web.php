@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Detect max size from dictionaries config files.
+Route::prefix('sizedetect')->group(function () {
+    // Incoterms.
+    Route::get('incoterms/groups','SizeDetectController@incotermsGroups');
+    Route::get('incoterms','SizeDetectController@incoterms');
+    
+});
