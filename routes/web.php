@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 // Detect max size from dictionaries config files.
 Route::prefix('sizedetect')->group(function () {
+    // Crops.
+    Route::get('crops/categories','SizeDetectController@cropsCategories');
+    Route::get('crops','SizeDetectController@crops');
     // Incoterms.
     Route::get('incoterms/groups','SizeDetectController@incotermsGroups');
     Route::get('incoterms','SizeDetectController@incoterms');

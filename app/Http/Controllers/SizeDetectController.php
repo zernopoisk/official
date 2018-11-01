@@ -7,18 +7,31 @@ use Illuminate\Http\Request;
 class SizeDetectController extends Controller
 {
     /**
-     * Incoterms.
+     * Crops Categories.
      */
-    public function incoterms()
+    public function cropsCategories()
     {
         $this->_displayMaxValues(
             $this->_calculateMaxValues(
-                config('dict.incoterms'),
-                ['group','alias','abbr','term_en','specification','type_of_transport','available']
-            ), "Incoterms"
+                config('dict.crops_categories'),
+                ['alias','name','translit']
+            ), "Crops Categories"
         );
     }
-    
+
+    /**
+     * Crops.
+     */
+    public function crops()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.crops'),
+                ['alias','name','translit']
+            ), "Crops"
+        );
+    }
+
     /**
      * Incoterms Groups.
      */
@@ -29,6 +42,19 @@ class SizeDetectController extends Controller
                 config('dict.incoterms_groups'),
                 ['alias','name','term_en','specification','available']
             ), "Incoterms Groups"
+        );
+    }
+
+    /**
+     * Incoterms.
+     */
+    public function incoterms()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.incoterms'),
+                ['group','alias','abbr','term_en','specification','type_of_transport','available']
+            ), "Incoterms"
         );
     }
     
