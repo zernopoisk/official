@@ -7,6 +7,45 @@ use Illuminate\Http\Request;
 class SizeDetectController extends Controller
 {
     /**
+     * Location Regions.
+     */
+    public function locationRegions()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.location_regions'),
+                ['alias','name','translit','type']
+            ), "Location Regions"
+        );
+    }
+    
+    /**
+     * Location Regions Centers.
+     */
+    public function locationRegionsCenters()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.location_regions_centers'),
+                ['alias','name','translit']
+            ), "Location Regions Centers"
+        );
+    }
+    
+    /**
+     * Location Regions Districts.
+     */
+    public function locationRegionsDistricts()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.location_regions_districts'),
+                ['alias','name','translit']
+            ), "Location Regions Districts"
+        );
+    }
+    
+    /**
      * Offers Statuses.
      */
     public function offersStatuses()

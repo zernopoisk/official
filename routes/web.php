@@ -17,6 +17,10 @@ Route::get('/', function () {
 
 // Detect max size from dictionaries config files.
 Route::prefix('sizedetect')->group(function () {
+    // Location.
+    Route::get('location/regions', 'SizeDetectController@locationRegions');
+    Route::get('location/regions/centers', 'SizeDetectController@locationRegionsCenters');
+    Route::get('location/regions/districts', 'SizeDetectController@locationRegionsDistricts');
     // Offers.
     Route::get('offers/statuses', 'SizeDetectController@offersStatuses');
     // Seller.
