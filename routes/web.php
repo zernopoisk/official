@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 // Detect max size from dictionaries config files.
 Route::prefix('sizedetect')->group(function () {
+    // Offers.
+    Route::get('offers/statuses', 'SizeDetectController@offersStatuses');
     // Seller.
     Route::get('seller/types', 'SizeDetectController@sellerTypes');
     // Pickup.

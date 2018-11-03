@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             PaymentTablesSeeder::class,
             PickupTableSeeder::class,
             SellerTypesTableSeeder::class,
+            OffersStatusesTableSeeder::class,
             
         ]);
     }

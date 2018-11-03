@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 class SizeDetectController extends Controller
 {
     /**
+     * Offers Statuses.
+     */
+    public function offersStatuses()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.offers_statuses'),
+                ['alias','name','translit', 'sense']
+            ), "Offers Statuses"
+        );
+    }
+    
+    /**
      * Seller Types.
      */
     public function sellerTypes()
