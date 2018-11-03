@@ -7,6 +7,32 @@ use Illuminate\Http\Request;
 class SizeDetectController extends Controller
 {
     /**
+     * Payment Methods.
+     */
+    public function paymentMethods()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.payment')['methods'],
+                ['alias','name','translit']
+            ), "Payment Methods"
+        );
+    }
+
+    /**
+     * Payment Forms.
+     */
+    public function paymentForms()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.payment')['forms'],
+                ['alias','name','translit']
+            ), "Payment Forms"
+        );
+    }
+
+    /**
      * Crops Categories.
      */
     public function cropsCategories()
