@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             IncotermsTablesSeeder::class,
             CropsTablesSeeder::class,
             PaymentTablesSeeder::class,
+            PickupTableSeeder::class,
         ]);
     }
 }
