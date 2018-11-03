@@ -85,6 +85,19 @@ class SizeDetectController extends Controller
     }
 
     /**
+     * Crops Classiness.
+     */
+    public function cropsClassiness()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.crops_classiness'),
+                ['alias','name','translit','number']
+            ), "Crops Classiness"
+        );
+    }
+
+    /**
      * Crops.
      */
     public function crops()

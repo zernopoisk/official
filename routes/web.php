@@ -28,6 +28,7 @@ Route::prefix('sizedetect')->group(function () {
     Route::get('payment/methods', 'SizeDetectController@paymentMethods');
     // Crops.
     Route::get('crops/categories','SizeDetectController@cropsCategories');
+    Route::get('crops/classiness','SizeDetectController@cropsClassiness');
     Route::get('crops','SizeDetectController@crops');
     // Incoterms.
     Route::get('incoterms/groups','SizeDetectController@incotermsGroups');
