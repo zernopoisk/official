@@ -17,6 +17,8 @@ class DatabaseSeeder extends Seeder
             CropsTablesSeeder::class,
             PaymentTablesSeeder::class,
             PickupTableSeeder::class,
+            SellerTypesTableSeeder::class,
+            
         ]);
     }
 }

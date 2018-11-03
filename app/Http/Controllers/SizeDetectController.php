@@ -7,6 +7,19 @@ use Illuminate\Http\Request;
 class SizeDetectController extends Controller
 {
     /**
+     * Seller Types.
+     */
+    public function sellerTypes()
+    {
+        $this->_displayMaxValues(
+            $this->_calculateMaxValues(
+                config('dict.sellertypes'),
+                ['alias','name','translit']
+            ), "Seller Types"
+        );
+    }
+    
+    /**
      * Pickup.
      */
     public function pickup()
@@ -18,6 +31,7 @@ class SizeDetectController extends Controller
             ), "Pickup"
         );
     }
+
     /**
      * Payment Methods.
      */
